@@ -1,0 +1,15 @@
+*, *:after, *.before {
+  box-sizing: border-box;
+}
+
+$color-primary: #313639;              /* Off-Black */
+$color-secondary: #e2e2e2;            /* Off-White */
+
+$accent-one: #f71735;                 /* Slight-Pink Red */
+$accent-two: #ff9f1c;                 /* Flat-Gold */
+$accent-three: #ea9010;               /* Hard-Gold */
+
+$font-primary: 'Raleway', sans-serif; /* For Titles/Nav/Headers */
+$font-secondary: 'Dosis', sans-serif; /* For Block Text/Subtitles/Footer  */
+
+

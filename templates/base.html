@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE>
+<html>
+<head>
+  <title>Dalo</title>
+  <meta charset="utf-8">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="{% static 'css/master.css' %}">
+</head>
+<body>
+  <nav>
+    <div id="nav_logo">
+
+    </div>
+    <ul>
+      <li><a>Home</a></i>
+      <li><a>About</a></i>
+      <li>
+        <a>Stocks</a>
+        <ul>
+          {% for stock in object_list %}
+          <li>{{ stock.symbol }}</li>
+          {% endfor %}
+          <li>Hi</li> 
+        </ul>
+      </i>
+      <li><a>Contact</a></i>
+    </ul>
+  </nav>
+  <div>
+    {% block content %}
+
+    {% endblock content %}
+  </div>
+</body>
+<html>
