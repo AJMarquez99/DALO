@@ -32,6 +32,8 @@ The project itself will use a few different programming technologies to allow it
   - NumPy
   - Matplotlib
   - Django
+  - MySqlClient
+  - Virtualenv
 - HTML5
 - CSS3
 - SASS (CSS Preprocessor)
