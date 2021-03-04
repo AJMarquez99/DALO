@@ -5,25 +5,25 @@
   <title>Dalo</title>
   <meta charset="utf-8">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="{% static 'css/master.css' %}">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="https://dalo-storage.s3.amazonaws.com/temp_logo2.png" />
+  <link type="text/css" rel="stylesheet" href="{% static 'css/master.css' %}" />
 </head>
 <body>
   <nav>
     <div id="nav_logo">
-
+      <img src="https://dalo-storage.s3.amazonaws.com/temp_logo2.png" />
     </div>
     <ul>
       <li><a>Home</a></i>
       <li><a>About</a></i>
-      <li>
+      <li class="subnav">
         <a>Stocks</a>
-        <ul>
+        <ul class="inactive">
           {% for stock in object_list %}
-          <li>{{ stock.symbol }}</li>
+          <li><a href="#">{{ stock.symbol }}</a></li>
           {% endfor %}
-          <li>Hi</li> 
         </ul>
       </i>
       <li><a>Contact</a></i>
