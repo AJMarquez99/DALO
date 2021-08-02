@@ -1,3 +1,6 @@
-__pycache__
-migrations
-config/__pycache__
+migrations/
+__pycache__/
+sass/
+static/sass/
+.sass-cache/
+daloenv/

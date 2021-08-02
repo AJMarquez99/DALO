@@ -2,27 +2,30 @@
 <!DOCTYPE>
 <html>
 <head>
-  <title>Dalo</title>
+  <title>Dalo | {% block title %}{% endblock title %}</title>
   <meta charset="utf-8">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet" />
-  <link rel="icon" href="https://dalo-storage.s3.amazonaws.com/temp_logo2.png" />
+  <link rel="icon" href="https://dalo-storage.s3.amazonaws.com/DaloLight2.png" />
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  {% block extra_css %}{% endblock extra_css %}
   <link type="text/css" rel="stylesheet" href="{% static 'css/master.css' %}" />
 </head>
 <body>
   <nav>
     <div id="nav_logo">
-      <img src="https://dalo-storage.s3.amazonaws.com/temp_logo2.png" />
+      <img src="https://dalo-storage.s3.amazonaws.com/DaloLight2.png" />
     </div>
     <ul>
-      <li><a>Home</a></i>
+      <li><a href="{% url "home" %}">Home</a></i>
       <li><a>About</a></i>
       <li class="subnav">
         <a>Stocks</a>
         <ul class="inactive">
           {% for stock in object_list %}
-          <li><a href="#">{{ stock.symbol }}</a></li>
+          <li><a href="{% url "stock_symbol" symbol=stock.symbol pk=stock.id %}">{{ stock.symbol }}</a></li>
+          {# <li><a href="stock/{{ stock.symbol }}={{ stock.id }}">{{ stock.symbol }}</a></li> #}
           {% endfor %}
         </ul>
       </i>
@@ -34,5 +37,8 @@
 
     {% endblock content %}
   </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+{% block extra_js %}{% endblock extra_js %}
 </body>
 <html>

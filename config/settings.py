@@ -26,7 +26,7 @@ SECRET_KEY = '-2tb2h!1^&@1r1thr)uyvnbfwe&1$ig!r!4w!766ib16kwk=r4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-18-224-165-100.us-east-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['3.20.214.128']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dalo',
+    'scripts',
 ]
 
 MIDDLEWARE = [
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dalo_data_db',
-        'USER': 'dalo',
+        'NAME': 'dalo_db',
+        'USER': 'dalo_site',
         'PASSWORD': 'L0L!mFck3d',
-        'HOST': '',
-        'PORT': '',
+        'HOST': '18.218.239.62',
+        'PORT': '3306',
 
     }
 }
@@ -124,6 +125,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [ str(BASE_DIR.joinpath('static')) ]

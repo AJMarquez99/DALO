@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}{{ object.name }}{% endblock title %}
+
+{% block content %}
+<h1>{{ object.symbol }}</h1>
+<span id="test"></span>
+
+<div id="test_div"></div>
+{% endblock content %}
+{% block extra_js %}
+<script>
+let dataset = [
+  {% for data in stock_data %}
+  ["{{ data.date }}", {{ data.open }}, {{ data.high }}, {{ data.low }}, {{ data.low }}, {{ data.volume }}],
+  {% endfor %}
+]
+
+$(document).ready( function() {
+  $("#test").text( dataset.length );
+  $.ajax({
+    url: '{% url 'get_graph' %}',
+    data: {
+      'stock_symbol': "{{ object.symbol }}"
+    },
+    dataType: 'json',
+    success: function( data ){
+      $("#test_div").append( data );
+    }
+  });
+});
+
+</script>
+{% endblock extra_js %}
